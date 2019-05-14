@@ -1,0 +1,21 @@
+/*
+header
+*/
+.header-tit {
+  text-align: center;
+}
+/*
+web-list
+*/
+.web-list {
+  list-style: none;
+  display: flex;
+  overflow-x: scroll;
+}
+.web-item {
+  width: 200px;
+  margin: 20px;
+}
+.web-item-image {
+  width: 100%;
+}
