@@ -4,47 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <title>Gallery</title>
 </head>
 <body>
-  <header class="header">
-    <h1 class="header-tit">Web Interface Gallery</h1>
-  </header>
-  <ul class="web-list">
-    <li class="web-item">
-      <a href="https://www.ana.co.jp/group/">
-        <h4 class="web-item-name">ANAグループ企業情報</h4>
-        <img src="/images/ana.png" alt="ANAグループ企業情報" class="web-item-image">
-      </a>
-    </li>
-    <li class="web-item">
-      <a href="https://www.jal.com/ja/">
-        <h4 class="web-item-name">JAL企業サイト</h4>
-        <img src="/images/jal.png" alt="JAL企業サイト" class="web-item-image">
-      </a>
-    </li>
-    <li class="web-item">
-      <a href="https://www.tokyometro.jp/index.html">
-        <h4 class="web-item-name">東京メトロ</h4>
-        <img src="/images/tokyometro.png" alt="東京メトロ" class="web-item-image">
-      </a>
-    </li>
-    <li class="web-item">
-      <a href="https://www.seiburailway.jp/">
-        <h4 class="web-item-name">西武鉄道Webサイト</h4>
-        <img src="/images/seiburailway.png" alt="西武鉄道Webサイト" class="web-item-image">
-      </a>
-    </li>
-    <li class="web-item">
-      <a href="https://www.kotsu.metro.tokyo.jp/">
-        <h4 class="web-item-name">東京都交通局</h4>
-        <img src="/images/kotsu_metro_tokyo.png" alt="東京都交通局" class="web-item-image">
-      </a>
-    </li>
-  </ul>
-  <footer class="footer">
-    © 9ooky
-  </footer>
+  <div id="app">
+    <header class="header">
+      <h1 class="header-tit">Web Interface Gallery</h1>
+    </header>
+    <ul class="web-list">
+      <li class="web-item" v-for="item in web_list" v-bind:key="item.id">
+        <a v-bind:href="item.url" target="_blank">
+          <h4 class="web-item-name">{{ item.name }}</h4>
+          <img v-bind:src="'/images/' + item.image" v-bind:alt="item.name" class="web-item-image">
+        </a>
+      </li>
+    </ul>
+    <footer class="footer">
+      © 9ooky
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
