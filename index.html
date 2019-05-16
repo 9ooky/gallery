@@ -11,8 +11,23 @@
 <body>
   <div id="app">
     <header class="header">
+      <div class="header-border">
+        <div class="header-border-item"></div>
+        <div class="header-border-item"></div>
+        <div class="header-border-item"></div>
+        <div class="header-border-item"></div>
+        <div class="header-border-item"></div>
+      </div>
       <h1 class="header-tit">Web Interface Gallery</h1>
     </header>
+    <ul class="switch-view">
+      <li class="switch-view-item">
+        <button class="switch-view-button-pc"></button>
+      </li>
+      <li class="switch-view-item">
+        <button class="switch-view-button-sp"></button>
+      </li>
+    </ul>
     <ul class="web-list">
       <li class="web-item" v-for="item in web_list" v-bind:key="item.id">
         <a v-bind:href="item.url" target="_blank">
