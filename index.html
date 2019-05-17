@@ -22,17 +22,18 @@
     </header>
     <ul class="switch-view">
       <li class="switch-view-item">
-        <button class="switch-view-button-pc"></button>
+        <input type="radio" name="switch_view" value="pc" v-model="mode" >PC
       </li>
       <li class="switch-view-item">
-        <button class="switch-view-button-sp"></button>
+        <input type="radio" name="switch_view" value="sp" v-model="mode" >SP
       </li>
     </ul>
     <ul class="web-list">
-      <li class="web-item" v-for="item in web_list" v-bind:key="item.id">
+      <li class="web-item" v-for="item in web_list">
         <a v-bind:href="item.url" target="_blank">
           <h4 class="web-item-name">{{ item.name }}</h4>
-          <img v-bind:src="'/images/' + item.image" v-bind:alt="item.name" class="web-item-image">
+          <img v-bind:src="'/images/' + item.image_pc" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'sp'}">
+          <img v-bind:src="'/images/' + item.image_sp" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'pc'}">
         </a>
       </li>
     </ul>

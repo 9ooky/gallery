@@ -45,6 +45,19 @@ header
   color: #263238;
 }
 /*
+switch-view
+*/
+.switch-view {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+}
+.switch-view-item {
+  display: block;
+  margin: 0 10px;
+}
+/*
 web-list
 */
 .web-list {
@@ -76,4 +89,7 @@ web-list
 .web-item > a:hover .web-item-image {
   box-shadow: 0 0 16px 1px rgba(207, 216, 230, .8);
   transition: box-shadow .2s;
+}
+.web-item-image.mode-none {
+  display: none;
 }
