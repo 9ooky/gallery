@@ -33,6 +33,21 @@ new Vue({
       image_pc: 'kotsu_metro_tokyo.png',
       image_sp: 'kotsu_metro_tokyo_sp.png',
     },{
+      url: 'https://www.enoden.co.jp/',
+      name: '江ノ島電鉄株式会社',
+      image_pc: 'enoden.png',
+      image_sp: 'enoden_sp.png',
+    },{
+      url: 'https://www.odakyubus.co.jp/',
+      name: '小田急バス',
+      image_pc: 'odakyubus.png',
+      image_sp: 'odakyubus_sp.png',
+    },{
+      url: 'https://www.odakyu.jp/',
+      name: '小田急電鉄',
+      image_pc: 'odakyu.png',
+      image_sp: 'odakyu_sp.png',
+    },{
       url: 'https://www.asahibeer.co.jp/',
       name: 'アサヒビール',
       image_pc: 'asahibeer.png',
@@ -52,6 +67,26 @@ new Vue({
       name: 'サントリー ホームページ',
       image_pc: 'suntory.png',
       image_sp: 'suntory_sp.png',
+    },{
+      url: 'https://www.kirin.co.jp/',
+      name: 'KIRIN',
+      image_pc: 'kirin.png',
+      image_sp: 'kirin_sp.png',
+    },{
+      url: 'http://www.meg-snow.com/',
+      name: '雪印メグミルク株式会社',
+      image_pc: 'meg-snow.png',
+      image_sp: 'meg-snow_sp.png',
+    },{
+      url: 'https://www.akagi.com/',
+      name: '赤城乳業株式会社',
+      image_pc: 'akagi.png',
+      image_sp: 'akagi_sp.png',
+    },{
+      url: 'http://www.sapporobeer.jp/',
+      name: 'サッポロビール',
+      image_pc: 'sapporobeer.png',
+      image_sp: 'sapporobeer_sp.png',
     },{
       url: 'https://www.kao.com/jp/',
       name: 'Kao 花王株式会社',
