@@ -28,6 +28,11 @@
         <input type="radio" name="switch_view" value="sp" v-model="mode" >SP
       </li>
     </ul>
+    <ul class="category-list">
+      <li v-for="(category, index) in category_list" class="category-item">
+        <a href="" @click.prevent="filterByCategory(index)">{{ category }}</a>
+      </li>
+    </ul>
     <ul class="web-list">
       <li class="web-item" v-for="item in web_list">
         <a v-bind:href="item.url" target="_blank">

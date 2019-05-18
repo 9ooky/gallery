@@ -50,21 +50,33 @@ switch-view
 .switch-view {
   display: flex;
   justify-content: center;
-  list-style: none;
   padding-left: 0;
+  list-style: none;
 }
 .switch-view-item {
   display: block;
   margin: 0 10px;
 }
 /*
+category-list
+*/
+.category-list {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.category-item {
+  margin: 0 10px;
+}
+/*
 web-list
 */
 .web-list {
+  padding-left: 0;
   list-style: none;
   display: flex;
   overflow-x: scroll;
-  padding-left: 0;
 }
 .web-item {
   width: 200px;
