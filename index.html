@@ -42,8 +42,8 @@
       <li class="web-item" v-for="item in web_list">
         <a v-bind:href="item.url" target="_blank">
           <h4 class="web-item-name">{{ item.name }}</h4>
-          <img v-bind:src="'/images/' + item.image_pc" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'sp'}">
-          <img v-bind:src="'/images/' + item.image_sp" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'pc'}">
+          <img v-bind:src="'./images/' + item.image_pc" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'sp'}">
+          <img v-bind:src="'./images/' + item.image_sp" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'pc'}">
         </a>
       </li>
     </ul>
