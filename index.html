@@ -33,6 +33,11 @@
         <a href="" @click.prevent="filterByCategory(index)">{{ category }}</a>
       </li>
     </ul>
+    <ul class="color-list">
+      <li v-for="(color, index) in color_list" class="color-item">
+        <a href="" @click.prevent="filterByColor(index)">{{ color }}</a>
+      </li>
+    </ul>
     <ul class="web-list">
       <li class="web-item" v-for="item in web_list">
         <a v-bind:href="item.url" target="_blank">

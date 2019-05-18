@@ -70,6 +70,18 @@ category-list
   margin: 0 10px;
 }
 /*
+color-list
+*/
+.color-list {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.color-item {
+  margin: 0 10px;
+}
+/*
 web-list
 */
 .web-list {
@@ -99,7 +111,7 @@ web-list
   transition: box-shadow .2s;
 }
 .web-item > a:hover .web-item-image {
-  box-shadow: 0 0 16px 1px rgba(207, 216, 230, .8);
+  box-shadow: 0 0 16px 1px rgba(207, 216, 230, .9);
   transition: box-shadow .2s;
 }
 .web-item-image.mode-none {
