@@ -11,6 +11,24 @@ body {
   background: #eceff1;
   background: #f5f8fa;
   background: #f7fafc;
+  position: relative;
+  right: 0;
+  transition: right .3s;
+}
+body.is-open {
+  right: 300px;
+  transition: right .3s;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, .8);
+  display: none;
+  z-index: 1;
+}
+.is-open .overlay {
+  display: block;
 }
 /*
 header
@@ -44,6 +62,49 @@ header
   margin: 50px 0 30px;
   color: #263238;
 }
+.open-menu {
+  width: 32px;
+  height: 30px;
+  position: absolute;
+  padding: 0;
+  border: none;
+  background: none;
+  top: 50px;
+  right: 30px;
+  outline:none;
+  z-index: 2;
+}
+.menu-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #263238;
+  border-radius: 3px;
+  position: relative;
+  transition: all .3s;
+}
+.menu-bar + .menu-bar {
+  margin-top: 10px;
+}
+.is-open .menu-bar:nth-child(1){
+  width: 120%;
+  top: 7px;
+  transform: rotate(45deg);
+  transition: all .3s;
+}
+.is-open .menu-bar:nth-child(2){
+  display: none;
+  transition: all .3s;
+}
+.is-open .menu-bar:nth-child(3){
+  width: 120%;
+  bottom: 6px;
+  transform: rotate(-45deg);
+  transition: all .3s;
+}
+.header {
+  position: relative;
+}
 /*
 switch-view
 */
@@ -58,16 +119,40 @@ switch-view
   margin: 0 10px;
 }
 /*
+sort-container
+*/
+.sort-container {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  background: #263238;
+  right: -300px;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.sort-tit {
+  color: #fff;
+  margin-top: 50px;
+}
+/*
 category-list
 */
 .category-list {
   padding-left: 0;
   list-style: none;
-  display: flex;
-  justify-content: center;
 }
-.category-item {
-  margin: 0 10px;
+.category-item + .category-item {
+    margin-top: 12px;
+}
+.category-item > a {
+  color: #fff;
+  text-decoration: none;
+  opacity: .8;
+  transition: opacity .1s;
+}
+.category-item > a:hover {
+  opacity: 1;
+  transition: opacity .1s;
 }
 /*
 color-list
@@ -76,10 +161,23 @@ color-list
   padding-left: 0;
   list-style: none;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 .color-item {
-  margin: 0 10px;
+  margin: 6px 0;
+  width: 50%;
+}
+.color-item > a {
+  color: #fff;
+  display: block;
+
+  text-decoration: none;
+  opacity: .8;
+  transition: opacity .1s;
+}
+.color-item > a:hover {
+  opacity: 1;
+  transition: opacity .1s;
 }
 /*
 web-list

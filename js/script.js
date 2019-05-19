@@ -150,6 +150,7 @@ let vm = new Vue({
       this.web_list = this.web_list.filter(function(item){
         return item.category == acctive_category;
       });
+      document.body.classList.toggle("is-open");
     },
     filterByColor: function(index) {
       let acctive_color = this.color_list[index];
@@ -161,9 +162,12 @@ let vm = new Vue({
             console.log('ok');
             return item.color[i] == acctive_color;
           }
-
         }
       });
+      document.body.classList.toggle("is-open");
+    },
+    openMenu: function() {
+      document.body.classList.toggle("is-open");
     }
   }
 })

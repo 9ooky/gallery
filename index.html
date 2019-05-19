@@ -10,46 +10,58 @@
 </head>
 <body>
   <div id="app">
-    <header class="header">
-      <div class="header-border">
-        <div class="header-border-item"></div>
-        <div class="header-border-item"></div>
-        <div class="header-border-item"></div>
-        <div class="header-border-item"></div>
-        <div class="header-border-item"></div>
-      </div>
-      <h1 class="header-tit">Web Interface Gallery</h1>
-    </header>
-    <ul class="switch-view">
-      <li class="switch-view-item">
-        <input type="radio" name="switch_view" value="pc" v-model="mode" >PC
-      </li>
-      <li class="switch-view-item">
-        <input type="radio" name="switch_view" value="sp" v-model="mode" >SP
-      </li>
-    </ul>
-    <ul class="category-list">
-      <li v-for="(category, index) in category_list" class="category-item">
-        <a href="" @click.prevent="filterByCategory(index)">{{ category }}</a>
-      </li>
-    </ul>
-    <ul class="color-list">
-      <li v-for="(color, index) in color_list" class="color-item">
-        <a href="" @click.prevent="filterByColor(index)">{{ color }}</a>
-      </li>
-    </ul>
-    <ul class="web-list">
-      <li class="web-item" v-for="item in web_list">
-        <a v-bind:href="item.url" target="_blank">
-          <h4 class="web-item-name">{{ item.name }}</h4>
-          <img v-bind:src="'images/' + item.image_pc" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'sp'}">
-          <img v-bind:src="'images/' + item.image_sp" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'pc'}">
-        </a>
-      </li>
-    </ul>
-    <footer class="footer">
-      © 9ooky
-    </footer>
+    <div class="overlay"></div>
+    <div class="sort-container">
+      <h3 class="sort-tit">Caregory</h3>
+      <ul class="category-list">
+        <li v-for="(category, index) in category_list" class="category-item">
+          <a href="" @click.prevent="filterByCategory(index)">{{ category }}</a>
+        </li>
+      </ul>
+      <h3 class="sort-tit">Color</h3>
+      <ul class="color-list">
+        <li v-for="(color, index) in color_list" class="color-item">
+          <a href="" @click.prevent="filterByColor(index)">{{ color }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <header class="header">
+        <div class="header-border">
+          <div class="header-border-item"></div>
+          <div class="header-border-item"></div>
+          <div class="header-border-item"></div>
+          <div class="header-border-item"></div>
+          <div class="header-border-item"></div>
+        </div>
+        <button class="open-menu" @click="openMenu">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+        <h1 class="header-tit">Web Interface Gallery</h1>
+      </header>
+      <ul class="switch-view">
+        <li class="switch-view-item">
+          <input type="radio" name="switch_view" value="pc" v-model="mode" >PC
+        </li>
+        <li class="switch-view-item">
+          <input type="radio" name="switch_view" value="sp" v-model="mode" >SP
+        </li>
+      </ul>
+      <ul class="web-list">
+        <li class="web-item" v-for="item in web_list">
+          <a v-bind:href="item.url" target="_blank">
+            <h4 class="web-item-name">{{ item.name }}</h4>
+            <img v-bind:src="'images/' + item.image_pc" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'sp'}">
+            <img v-bind:src="'images/' + item.image_sp" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'pc'}">
+          </a>
+        </li>
+      </ul>
+      <footer class="footer">
+        © 9ooky
+      </footer>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./js/script.js"></script>
