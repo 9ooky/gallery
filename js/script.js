@@ -7,6 +7,13 @@ const default_web_list = [
     category: '交通',
     color: ['Green'],
   },{
+    url: 'https://next.rikunabi.com/',
+    name: 'リクナビNEXT',
+    image_pc: 'next-rikunabi.png',
+    image_sp: 'next-rikunabi_sp.png',
+    category: '人材',
+    color: ['Red'],
+  },{
     url: 'https://www.jal.com/ja/',
     name: 'JAL企業サイト',
     image_pc: 'jal.png',
@@ -41,6 +48,13 @@ const default_web_list = [
     image_sp: 'seiburailway_sp.png',
     category: '交通',
     color: ['Light Blue', 'Green'],
+  },{
+    url: 'https://tenshoku.mynavi.jp/',
+    name: 'マイナビ転職',
+    image_pc: 'mynavi.png',
+    image_sp: 'mynavi_sp.png',
+    category: '人材',
+    color: ['Light Blue'],
   },{
     url: 'https://www.kotsu.metro.tokyo.jp/',
     name: '東京都交通局',
@@ -146,7 +160,7 @@ let vm = new Vue({
   el: '#app',
   data: {
     mode: 'pc',
-    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康'],
+    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康', '人材'],
     color_list: ['Red', 'Pink', 'Purple', 'Blue', 'Light Blue', 'Green', 'Yellow', 'Orange', 'Brown', 'Black', 'White', 'Colorful'],
     web_list: default_web_list,
   },
