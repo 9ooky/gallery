@@ -63,6 +63,13 @@ const default_web_list = [
     category: '交通',
     color: ['Green'],
   },{
+    url: 'https://doda.jp/',
+    name: 'doda',
+    image_pc: 'doda.png',
+    image_sp: 'doda_sp.png',
+    category: '人材',
+    color: ['Blue', 'Light Blue'],
+  },{
     url: 'https://www.ana.co.jp/group/',
     name: 'ANAグループ企業情報',
     image_pc: 'ana.png',
@@ -70,12 +77,26 @@ const default_web_list = [
     category: '交通',
     color: ['Blue'],
   },{
+    url: 'https://type.jp/',
+    name: 'type',
+    image_pc: 'type.png',
+    image_sp: 'type_sp.png',
+    category: '人材',
+    color: ['Yellow'],
+  },{
     url: 'https://www.odakyubus.co.jp/',
     name: '小田急バス',
     image_pc: 'odakyubus.png',
     image_sp: 'odakyubus_sp.png',
     category: '交通',
     color: ['Blue'],
+  },{
+    url: 'https://jobs.forkwell.com/',
+    name: 'Forkwell Jobs',
+    image_pc: 'forkwell.png',
+    image_sp: 'forkwell_sp.png',
+    category: '人材',
+    color: ['Green'],
   },{
     url: 'https://www.jreast.co.jp/',
     name: 'JR東日本',
@@ -105,6 +126,13 @@ const default_web_list = [
     category: '飲料・食品',
     color: ['Red', 'Brown'],
   },{
+    url: 'https://www.moreworks.jp/',
+    name: 'MOREWORKS',
+    image_pc: 'moreworks.png',
+    image_sp: 'moreworks_sp.png',
+    category: '人材',
+    color: ['Blue', 'Light Blue', 'Green'],
+  },{
     url: 'https://www.suntory.co.jp/',
     name: 'サントリー ホームページ',
     image_pc: 'suntory.png',
@@ -112,12 +140,26 @@ const default_web_list = [
     category: '飲料・食品',
     color: ['Light Blue'],
   },{
+    url: 'https://www.ten-shoku.net/',
+    name: 'クリエ転職ネット',
+    image_pc: 'ten-shoku-net.png',
+    image_sp: 'ten-shoku-net_sp.png',
+    category: '人材',
+    color: ['Blue'],
+  },{
     url: 'https://www.kirin.co.jp/',
     name: 'KIRIN',
     image_pc: 'kirin.png',
     image_sp: 'kirin_sp.png',
     category: '飲料・食品',
     color: ['Red'],
+  },{
+    url: 'https://www.find-job.net/',
+    name: 'Find Job!',
+    image_pc: 'find-job.png',
+    image_sp: 'find-job_sp.png',
+    category: '人材',
+    color: ['Orange'],
   },{
     url: 'http://www.meg-snow.com/',
     name: '雪印メグミルク株式会社',
@@ -133,6 +175,13 @@ const default_web_list = [
     category: '飲料・食品',
     color: ['Light Blue'],
   },{
+    url: 'https://www.manpowerjobnet.com/',
+    name: 'マンパワーグループ',
+    image_pc: 'manpower.png',
+    image_sp: 'manpower_sp.png',
+    category: '人材',
+    color: ['Red', 'Orange'],
+  },{
     url: 'http://www.sapporobeer.jp/',
     name: 'サッポロビール',
     image_pc: 'sapporobeer.png',
@@ -146,6 +195,13 @@ const default_web_list = [
     image_sp: 'kao_sp.png',
     category: '美容・ヘルスケア・健康',
     color: ['Green','White'],
+  },{
+    url: 'https://jobtalk.jp/',
+    name: '転職会議',
+    image_pc: 'jobtalk.png',
+    image_sp: 'jobtalk_sp.png',
+    category: '人材',
+    color: ['Green'],
   },{
     url: 'https://www.kanebo-cosmetics.co.jp/',
     name: 'カネボウ化粧品',
