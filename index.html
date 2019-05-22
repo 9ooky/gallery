@@ -25,44 +25,51 @@
         </li>
       </ul>
     </div>
-    <button class="open-menu" @click="openMenu">
-      <span class="menu-bar"></span>
-      <span class="menu-bar"></span>
-      <span class="menu-bar"></span>
-    </button>
-    <div class="container">
-      <header class="header">
-        <div class="header-border">
-          <div class="header-border-item"></div>
-          <div class="header-border-item"></div>
-          <div class="header-border-item"></div>
-          <div class="header-border-item"></div>
-          <div class="header-border-item"></div>
-        </div>
-        <h1 class="header-tit">Web Interface Gallery</h1>
-      </header>
-      <ul class="switch-view">
-        <li class="switch-view-item">
-          <input type="radio" name="switch_view" value="pc" v-model="mode" >PC
-        </li>
-        <li class="switch-view-item">
-          <input type="radio" name="switch_view" value="sp" v-model="mode" >SP
-        </li>
-      </ul>
-      <ul class="web-list">
-        <li class="web-item" v-for="item in web_list">
-          <a v-bind:href="item.url" target="_blank">
-            <h4 class="web-item-name">{{ item.name }}</h4>
-            <img v-bind:src="'images/' + item.image_pc" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'sp'}">
-            <img v-bind:src="'images/' + item.image_sp" v-bind:alt="item.name" class="web-item-image" :class="{'mode-none': mode == 'pc'}">
-          </a>
-        </li>
-      </ul>
-      <footer class="footer">
-        © 9ooky
-      </footer>
+    <div class="app-content">
+      <button class="open-menu" @click="openMenu">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+      <div class="container">
+        <header class="header">
+          <div class="header-border">
+            <div class="header-border-item"></div>
+            <div class="header-border-item"></div>
+            <div class="header-border-item"></div>
+            <div class="header-border-item"></div>
+            <div class="header-border-item"></div>
+          </div>
+          <h1 class="header-tit">Web Interface Gallery</h1>
+        </header>
+        <ul class="switch-view">
+          <li class="switch-view-item">
+            <input type="radio" name="switch_view" value="pc" v-model="mode" >PC
+          </li>
+          <li class="switch-view-item">
+            <input type="radio" name="switch_view" value="sp" v-model="mode" >SP
+          </li>
+        </ul>
+        <ul class="web-list">
+          <li class="web-item" v-for="(item, index) in web_list">
+            <a href="" @click.prevent="expandImage(index)" class="web-item-expansion"><ion-icon name="search"></ion-icon></a>
+            <a v-bind:href="item.url" target="_blank">
+              <h4 class="web-item-name">{{ item.name }}</h4>
+              <img :src="'images/' + item.image_pc" :alt="item.name" class="web-item-image" v-show="mode == 'pc'">
+              <img :src="'images/' + item.image_sp" :alt="item.name" class="web-item-image" v-show="mode == 'sp'">
+            </a>
+          </li>
+        </ul>
+        <footer class="footer">
+          © 9ooky
+        </footer>
+      </div>
+    </div>
+    <div class="expand-container" v-show="expand">
+      <button class="close-btn" @click="closeExpand"></button>
     </div>
   </div>
+  <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./js/script.js"></script>
 </body>

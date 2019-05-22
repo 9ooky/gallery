@@ -7,6 +7,13 @@ const default_web_list = [
     category: '交通',
     color: ['Green'],
   },{
+    url: 'https://honto.jp/',
+    name: 'honto',
+    image_pc: 'honto.png',
+    image_sp: 'honto_sp.png',
+    category: '印刷・出版',
+    color: ['Blue', 'Cream'],
+  },{
     url: 'https://next.rikunabi.com/',
     name: 'リクナビNEXT',
     image_pc: 'next-rikunabi.png',
@@ -28,6 +35,13 @@ const default_web_list = [
     category: '飲料・食品',
     color: ['Red', 'Brown'],
   },{
+    url: 'http://www.shc.co.jp/book/',
+    name: '産業編集センター 出版部',
+    image_pc: 'shc.png',
+    image_sp: 'shc_sp.png',
+    category: '印刷・出版',
+    color: ['White', 'Brown'],
+  },{
     url: 'https://www.tokyometro.jp/index.html',
     name: '東京メトロ',
     image_pc: 'tokyometro.png',
@@ -48,6 +62,13 @@ const default_web_list = [
     image_sp: 'seiburailway_sp.png',
     category: '交通',
     color: ['Light Blue', 'Green'],
+  },{
+    url: 'http://www.bnn.co.jp/',
+    name: '株式会社ビー・エヌ・エヌ新社',
+    image_pc: 'bnn.png',
+    image_sp: 'bnn.png',
+    category: '印刷・出版',
+    color: ['Colorful', 'White'],
   },{
     url: 'https://tenshoku.mynavi.jp/',
     name: 'マイナビ転職',
@@ -75,6 +96,13 @@ const default_web_list = [
     image_pc: 'ana.png',
     image_sp: 'ana_sp.png',
     category: '交通',
+    color: ['Blue'],
+  },{
+    url: 'https://www.kadokawa.co.jp/',
+    name: 'KADOKAWA',
+    image_pc: 'kadokawa.png',
+    image_sp: 'kadokawa_sp.png',
+    category: '印刷・出版',
     color: ['Blue'],
   },{
     url: 'https://type.jp/',
@@ -111,6 +139,13 @@ const default_web_list = [
     image_sp: 'asahibeer_sp.png',
     category: '飲料・食品',
     color: ['Blue'],
+  },{
+    url: 'http://orangebunko.shueisha.co.jp/',
+    name: '集英社 オレンジ文庫',
+    image_pc: 'orangebunko.png',
+    image_sp: 'orangebunko_sp.png',
+    category: '印刷・出版',
+    color: ['Orange'],
   },{
     url: 'https://www.odakyu.jp/',
     name: '小田急電鉄',
@@ -203,6 +238,13 @@ const default_web_list = [
     category: '人材',
     color: ['Green'],
   },{
+    url: 'https://www.lmagazine.jp/',
+    name: '京阪神エルマガジン社',
+    image_pc: 'lmagazine.png',
+    image_sp: 'lmagazine_sp.png',
+    category: '印刷・出版',
+    color: ['Red','White'],
+  },{
     url: 'https://www.kanebo-cosmetics.co.jp/',
     name: 'カネボウ化粧品',
     image_pc: 'kanebo.png',
@@ -216,8 +258,9 @@ let vm = new Vue({
   el: '#app',
   data: {
     mode: 'pc',
-    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康', '人材'],
-    color_list: ['Red', 'Pink', 'Purple', 'Blue', 'Light Blue', 'Green', 'Yellow', 'Orange', 'Brown', 'Black', 'White', 'Colorful'],
+    expand: false,
+    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康', '人材', '印刷・出版'],
+    color_list: ['Red', 'Pink', 'Purple', 'Blue', 'Light Blue', 'Green', 'Yellow', 'Orange', 'Brown', 'Cream', 'Black', 'White', 'Colorful'],
     web_list: default_web_list,
   },
   methods: {
@@ -245,6 +288,24 @@ let vm = new Vue({
     },
     openMenu: function() {
       document.body.classList.toggle("is-open");
+    },
+    expandImage: function(index) {
+      this.expand = true;
+      const expand_image =  document.createElement('img');
+      expand_image.classList.add('expand-image');
+      if (this.mode == 'pc') {
+        expand_image.src = `images/${this.web_list[index].image_pc}`;
+      } else if (this.mode == 'sp') {
+        expand_image.src = `images/${this.web_list[index].image_sp}`;
+      }
+      document.querySelector('.app-content').classList.add('is-blur');
+      document.querySelector('.expand-container').appendChild(expand_image);
+    },
+    closeExpand: function() {
+      document.querySelector('.app-content').classList.remove('is-blur');
+      let expand_image = document.querySelector('.expand-container').lastElementChild;
+      document.querySelector('.expand-container').removeChild(expand_image);
+      this.expand = false;
     }
   }
 })
