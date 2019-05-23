@@ -5,7 +5,7 @@ const default_web_list = [
     image_pc: 'enoden.png',
     image_sp: 'enoden_sp.png',
     category: '交通',
-    color: ['Green'],
+    color: ['Green', 'Cream'],
   },{
     url: 'https://honto.jp/',
     name: 'honto',
@@ -189,6 +189,13 @@ const default_web_list = [
     category: '飲料・食品',
     color: ['Red'],
   },{
+    url: 'https://www.natsume.co.jp/',
+    name: 'ナツメ社',
+    image_pc: 'natsume.png',
+    image_sp: 'natsume_sp.png',
+    category: '印刷・出版',
+    color: ['Yellow'],
+  },{
     url: 'https://www.find-job.net/',
     name: 'Find Job!',
     image_pc: 'find-job.png',
@@ -216,6 +223,13 @@ const default_web_list = [
     image_sp: 'manpower_sp.png',
     category: '人材',
     color: ['Red', 'Orange'],
+  },{
+    url: 'http://mishimasha.com/',
+    name: '株式会社ミシマ社',
+    image_pc: 'mishima.png',
+    image_sp: 'mishima.png',
+    category: '印刷・出版',
+    color: ['Green', 'Cream'],
   },{
     url: 'http://www.sapporobeer.jp/',
     name: 'サッポロビール',
