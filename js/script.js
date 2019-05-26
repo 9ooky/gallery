@@ -155,7 +155,7 @@ const default_web_list = [
     color: ['Green'],
   },{
     url: 'https://www.bloomberg.co.jp/',
-    name: 'loomberg',
+    name: 'bloomberg',
     image_pc: 'bloomberg.png',
     image_sp: 'bloomberg_sp.png',
     category: 'メディア',
