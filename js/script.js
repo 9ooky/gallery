@@ -7,6 +7,13 @@ const default_web_list = [
     category: '交通',
     color: ['Green', 'Cream'],
   },{
+    url: 'https://wired.jp/',
+    name: 'WIRED.jp',
+    image_pc: 'wired.png',
+    image_sp: 'wired_sp.png',
+    category: 'メディア',
+    color: ['White'],
+  },{
     url: 'https://honto.jp/',
     name: 'honto',
     image_pc: 'honto.png',
@@ -27,6 +34,13 @@ const default_web_list = [
     image_sp: 'jal_sp.png',
     category: '交通',
     color: ['Red', 'White'],
+  },{
+    url: 'https://gendai.ismedia.jp/',
+    name: '現代ビジネス',
+    image_pc: 'gendai.png',
+    image_sp: 'gendai_sp.png',
+    category: 'メディア',
+    color: ['Red'],
   },{
     url: 'https://www.meiji.com/',
     name: '明治ホールディングス株式会社',
@@ -63,6 +77,13 @@ const default_web_list = [
     category: '交通',
     color: ['Light Blue', 'Green'],
   },{
+    url: 'hhttps://diamond.jp/',
+    name: 'ダイヤモンド・オンライン',
+    image_pc: 'diamond.png',
+    image_sp: 'diamond_sp.png',
+    category: 'メディア',
+    color: ['Brown'],
+  },{
     url: 'http://www.bnn.co.jp/',
     name: '株式会社ビー・エヌ・エヌ新社',
     image_pc: 'bnn.png',
@@ -98,6 +119,13 @@ const default_web_list = [
     category: '交通',
     color: ['Blue'],
   },{
+    url: 'https://business.nikkei.com/',
+    name: '日経ビジネス電子版',
+    image_pc: 'business-nikkei.png',
+    image_sp: 'business-nikkei_sp.png',
+    category: 'メディア',
+    color: ['Red'],
+  },{
     url: 'https://www.kadokawa.co.jp/',
     name: 'KADOKAWA',
     image_pc: 'kadokawa.png',
@@ -126,6 +154,13 @@ const default_web_list = [
     category: '人材',
     color: ['Green'],
   },{
+    url: 'https://www.bloomberg.co.jp/',
+    name: 'loomberg',
+    image_pc: 'fbloomberg.png',
+    image_sp: 'bloomberg_sp.png',
+    category: 'メディア',
+    color: ['Blue'],
+  },{
     url: 'https://www.jreast.co.jp/',
     name: 'JR東日本',
     image_pc: 'jreast.png',
@@ -153,6 +188,13 @@ const default_web_list = [
     image_sp: 'odakyu_sp.png',
     category: '交通',
     color: ['Light Blue','Blue'],
+  },{
+    url: 'https://www.huffingtonpost.jp/',
+    name: 'ハフポスト',
+    image_pc: 'huffingtonpost.png',
+    image_sp: 'huffingtonpost_sp.png',
+    category: 'メディア',
+    color: ['Green','Black'],
   },{
     url: 'https://www.morinaga.co.jp/',
     name: '森永製菓株式会社',
@@ -195,6 +237,13 @@ const default_web_list = [
     image_sp: 'natsume_sp.png',
     category: '印刷・出版',
     color: ['Yellow'],
+  },{
+    url: 'https://toyokeizai.net/',
+    name: '東洋経済オンライン',
+    image_pc: 'toyokeizai.png',
+    image_sp: 'toyokeizai_sp.png',
+    category: 'メディア',
+    color: ['Colorful'],
   },{
     url: 'https://www.find-job.net/',
     name: 'Find Job!',
@@ -273,7 +322,7 @@ let vm = new Vue({
   data: {
     mode: 'pc',
     expand: false,
-    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康', '人材', '印刷・出版'],
+    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康', '人材', '印刷・出版', 'メディア'],
     color_list: ['Red', 'Pink', 'Purple', 'Blue', 'Light Blue', 'Green', 'Yellow', 'Orange', 'Brown', 'Cream', 'Black', 'White', 'Colorful'],
     web_list: default_web_list,
   },
