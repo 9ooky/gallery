@@ -326,6 +326,16 @@ let vm = new Vue({
     color_list: ['Red', 'Pink', 'Purple', 'Blue', 'Light Blue', 'Green', 'Yellow', 'Orange', 'Brown', 'Cream', 'Black', 'White', 'Colorful'],
     web_list: default_web_list,
   },
+  computed: {
+    returnWidth: function(){
+
+    }
+  },
+  created: function(){
+    const webList = document.querySelector('.web-list');
+    webList.style.width = `${this.web_list.length * 240}px`;
+
+  },
   methods: {
     filterByCategory: function(index){
       let acctive_category = this.category_list[index];
@@ -369,6 +379,37 @@ let vm = new Vue({
       let expand_image = document.querySelector('.expand-container').lastElementChild;
       document.querySelector('.expand-container').removeChild(expand_image);
       this.expand = false;
+    },
+    scrollList: function(e) {
+      const knob = document.querySelector('.knob');
+      const scroll_bar = document.querySelector('.scroll-bar');
+      let knob_width = knob.clientWidth;
+      let start_pos = scroll_bar.offsetLeft;
+      let min_pos = 0;
+      let max_pos = scroll_bar.clientWidth - knob_width;;
+      let mouse_pos;
+      let btn_pos;
+      let documentMouseMove;
+      let documentMouseUp;
+
+      knob.addEventListener('mousedown', (e) => {
+        documentMouseMove = document.onmousemove;
+        documentMouseUp = document.onmouseup;
+        document.onmousemove = function(e) {
+          mouse_pos = e.pageX - start_pos;
+          knob.style.left = `${mouse_pos}px`;
+          if (mouse_pos <= min_pos) {
+            knob.style.left = `${min_pos}px`;
+          }
+          if (max_pos <= mouse_pos) {
+            knob.style.left = `${max_pos}px`;
+          }
+        };
+        return document.onmouseup = function() {
+            document.onmousemove = documentMouseMove;
+            return document.onmouseup = documentMouseUp;
+        };
+      });
     }
   }
 })

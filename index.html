@@ -50,16 +50,22 @@
             <input type="radio" name="switch_view" value="sp" v-model="mode" >SP
           </li>
         </ul>
-        <ul class="web-list">
-          <li class="web-item" v-for="(item, index) in web_list">
-            <a href="" @click.prevent="expandImage(index)" class="web-item-expansion"><ion-icon name="search"></ion-icon></a>
-            <a v-bind:href="item.url" target="_blank">
-              <h4 class="web-item-name">{{ item.name }}</h4>
-              <img :src="'images/' + item.image_pc" :alt="item.name" class="web-item-image" v-show="mode == 'pc'">
-              <img :src="'images/' + item.image_sp" :alt="item.name" class="web-item-image" v-show="mode == 'sp'">
-            </a>
-          </li>
-        </ul>
+        <div class="scroll-bar">
+          <div class="bar"></div>
+          <button class="knob" @mousedown="scrollList(e)"></button>
+        </div>
+        <div class="web-list-container">
+          <ul class="web-list">
+            <li class="web-item" v-for="(item, index) in web_list">
+              <a href="" @click.prevent="expandImage(index)" class="web-item-expansion"><ion-icon name="search"></ion-icon></a>
+              <a v-bind:href="item.url" target="_blank">
+                <h4 class="web-item-name">{{ item.name }}</h4>
+                <img :src="'images/' + item.image_pc" :alt="item.name" class="web-item-image" v-show="mode == 'pc'">
+                <img :src="'images/' + item.image_sp" :alt="item.name" class="web-item-image" v-show="mode == 'sp'">
+              </a>
+            </li>
+          </ul>
+        </div>
         <footer class="footer">
           © 9ooky
         </footer>
