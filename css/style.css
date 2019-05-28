@@ -48,7 +48,7 @@ body.is-open {
 expand image
 */
 .expand-container {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -57,7 +57,14 @@ expand image
     z-index: 2;
     overflow-y: scroll;
 }
-
+.bg-layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: zoom-out;
+}
 .expand-image {
   max-width: 86%;
   width: 800px;
@@ -67,17 +74,6 @@ expand image
   left: 50%;
   transform: translate(-50%, 0);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-}
-.close-btn {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  border: none;
-  background: none;
-  outline: none;
 }
 .close-btn:before {
   content: "";

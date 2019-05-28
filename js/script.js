@@ -28,6 +28,13 @@ const default_web_list = [
     category: '人材',
     color: ['Red'],
   },{
+    url: 'https://www.resonabank.co.jp/',
+    name: 'りそな銀行',
+    image_pc: 'resonabank.png',
+    image_sp: 'resonabank_sp.png',
+    category: '金融・証券・保険',
+    color: ['Green'],
+  },{
     url: 'https://www.jal.com/ja/',
     name: 'JAL企業サイト',
     image_pc: 'jal.png',
@@ -90,6 +97,13 @@ const default_web_list = [
     image_sp: 'bnn.png',
     category: '印刷・出版',
     color: ['Colorful', 'White'],
+  },{
+    url: 'https://www.smbc.co.jp/',
+    name: '三井住友銀行',
+    image_pc: 'smbc.png',
+    image_sp: 'smbc.png',
+    category: '金融・証券・保険',
+    color: ['Green'],
   },{
     url: 'https://tenshoku.mynavi.jp/',
     name: 'マイナビ転職',
@@ -231,6 +245,13 @@ const default_web_list = [
     category: '飲料・食品',
     color: ['Red'],
   },{
+    url: 'https://www.mizuhobank.co.jp/index.html',
+    name: 'みずほ銀行',
+    image_pc: 'mizuhobank.png',
+    image_sp: 'mizuhobank_sp.png',
+    category: '金融・証券・保険',
+    color: ['Blue'],
+  },{
     url: 'https://www.natsume.co.jp/',
     name: 'ナツメ社',
     image_pc: 'natsume.png',
@@ -294,6 +315,13 @@ const default_web_list = [
     category: '美容・ヘルスケア・健康',
     color: ['Green','White'],
   },{
+    url: 'http://www.boj.or.jp/',
+    name: '日本銀行',
+    image_pc: 'bank-of-japan.png',
+    image_sp: 'bank-of-japan_sp.png',
+    category: '金融・証券・保険',
+    color: ['Black'],
+  },{
     url: 'https://jobtalk.jp/',
     name: '転職会議',
     image_pc: 'jobtalk.png',
@@ -322,7 +350,7 @@ let vm = new Vue({
   data: {
     mode: 'pc',
     expand: false,
-    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康', '人材', '印刷・出版', 'メディア'],
+    category_list: ['交通', '飲料・食品', '美容・ヘルスケア・健康', '人材', '印刷・出版', 'メディア', '金融・証券・保険'],
     color_list: ['Red', 'Pink', 'Purple', 'Blue', 'Light Blue', 'Green', 'Yellow', 'Orange', 'Brown', 'Cream', 'Black', 'White', 'Colorful'],
     web_list: default_web_list,
   },
@@ -380,7 +408,7 @@ let vm = new Vue({
       document.querySelector('.expand-container').removeChild(expand_image);
       this.expand = false;
     },
-    scrollList: function(e) {
+    mouesDown: function(e) {
       const knob = document.querySelector('.knob');
       const scroll_bar = document.querySelector('.scroll-bar');
       let knob_width = knob.clientWidth;
@@ -392,24 +420,22 @@ let vm = new Vue({
       let documentMouseMove;
       let documentMouseUp;
 
-      knob.addEventListener('mousedown', (e) => {
-        documentMouseMove = document.onmousemove;
-        documentMouseUp = document.onmouseup;
-        document.onmousemove = function(e) {
-          mouse_pos = e.pageX - start_pos;
-          knob.style.left = `${mouse_pos}px`;
-          if (mouse_pos <= min_pos) {
-            knob.style.left = `${min_pos}px`;
-          }
-          if (max_pos <= mouse_pos) {
-            knob.style.left = `${max_pos}px`;
-          }
-        };
-        return document.onmouseup = function() {
-            document.onmousemove = documentMouseMove;
-            return document.onmouseup = documentMouseUp;
-        };
-      });
+      documentMouseMove = document.onmousemove;
+      documentMouseUp = document.onmouseup;
+      document.onmousemove = function(e) {
+        mouse_pos = e.pageX - start_pos;
+        knob.style.left = `${mouse_pos}px`;
+        if (mouse_pos <= min_pos) {
+          knob.style.left = `${min_pos}px`;
+        }
+        if (max_pos <= mouse_pos) {
+          knob.style.left = `${max_pos}px`;
+        }
+      };
+      return document.onmouseup = function() {
+          document.onmousemove = documentMouseMove;
+          return document.onmouseup = documentMouseUp;
+      };
     }
   }
 })

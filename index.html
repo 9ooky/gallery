@@ -52,7 +52,7 @@
         </ul>
         <div class="scroll-bar">
           <div class="bar"></div>
-          <button class="knob" @mousedown="scrollList(e)"></button>
+          <button class="knob" @mousedown="mouesDown(e)"></button>
         </div>
         <div class="web-list-container">
           <ul class="web-list">
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="expand-container" v-show="expand">
-      <button class="close-btn" @click="closeExpand"></button>
+      <div class="bg-layer" @click="closeExpand"></div>
     </div>
   </div>
   <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
