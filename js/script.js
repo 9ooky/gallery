@@ -360,9 +360,13 @@ let vm = new Vue({
     }
   },
   created: function(){
-    const webList = document.querySelector('.web-list');
-    webList.style.width = `${this.web_list.length * 240}px`;
-
+    const knob = document.querySelector('.knob');
+    const web_list = document.querySelector('.web-list');
+    let window_width = window.innerWidth;
+    let web_list_width = this.web_list.length * 240;
+    let knob_width = window_width ** 2 / web_list_width;
+    web_list.style.width = `${web_list_width}px`;
+    knob.style.width = `${knob_width}px`;
   },
   methods: {
     filterByCategory: function(index){
@@ -411,10 +415,14 @@ let vm = new Vue({
     mouesDown: function(e) {
       const knob = document.querySelector('.knob');
       const scroll_bar = document.querySelector('.scroll-bar');
+      const container = document.querySelector('.web-list-container');
+      const web_list = document.querySelector('.web-list');
+      let web_list_width = web_list.clientWidth;
+      let window_width = window.innerWidth;
       let knob_width = knob.clientWidth;
       let start_pos = scroll_bar.offsetLeft;
       let min_pos = 0;
-      let max_pos = scroll_bar.clientWidth - knob_width;;
+      let max_pos = scroll_bar.clientWidth - knob_width;
       let mouse_pos;
       let btn_pos;
       let documentMouseMove;
@@ -425,6 +433,7 @@ let vm = new Vue({
       document.onmousemove = function(e) {
         mouse_pos = e.pageX - start_pos;
         knob.style.left = `${mouse_pos}px`;
+        container.scrollLeft = mouse_pos * web_list_width / window_width;
         if (mouse_pos <= min_pos) {
           knob.style.left = `${min_pos}px`;
         }
