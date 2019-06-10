@@ -445,6 +445,14 @@ let vm = new Vue({
           document.onmousemove = documentMouseMove;
           return document.onmouseup = documentMouseUp;
       };
+    },
+    scrollContainer: function() {
+      const knob = document.querySelector('.knob');
+      const container = document.querySelector('.web-list-container');
+      const web_list = document.querySelector('.web-list');
+      let web_list_width = web_list.clientWidth;
+      let window_width = window.innerWidth;
+      knob.style.left = `${container.scrollLeft * window_width / web_list_width}px`;
     }
   }
 })

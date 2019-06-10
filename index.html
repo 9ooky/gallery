@@ -54,7 +54,7 @@
           <div class="bar"></div>
           <button class="knob" @mousedown="mouesDown(e)"></button>
         </div>
-        <div class="web-list-container">
+        <div class="web-list-container" @scroll="scrollContainer">
           <ul class="web-list">
             <li class="web-item" v-for="(item, index) in web_list">
               <a href="" @click.prevent="expandImage(index)" class="web-item-expansion"><ion-icon name="search"></ion-icon></a>
